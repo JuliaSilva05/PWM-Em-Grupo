@@ -1,0 +1,27 @@
+:root {
+    --background-color: #e9dcc9; /* Cor de pergaminho */
+    --text-color: #3e2723; /* Marrom escuro */
+    --accent-color: #7d5a3c; /* Marrom médio */
+    --border-color: #5d4037; /* Borda marrom */
+    --hover-color: #c62828; /* Vermelho para hover */
+}
+  
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    border-bottom: 2px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+  
+.header h1 {
+    font-family: 'Medievalish', 'Cinzel', serif;
+    font-size: 2.3rem;
+    color: var(--text-color);
+    margin: 0;
+    flex-grow: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
