@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
+import '../styles/Header.css'
 
 function Header() {
   return (
     <header className="header">
+
       <h1>RPG Ficha Fácil</h1>
+
       <nav>
         <Link to="/">
           <img src="/src/assets/images/home-svgrepo-com.svg" alt="Ícone Home" />
@@ -25,7 +28,9 @@ function Header() {
           <img src="/src/assets/images/user-alt-1-svgrepo-com.svg" alt="Ícone Usuário" />
           Login
         </Link>
+
       </nav>
+      
     </header>
   )
 }
