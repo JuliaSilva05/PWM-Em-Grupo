@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom'
 import '../styles/Header.css'
+import homeIcon from '../assets/images/home-svgrepo-com.svg'
+import personIcon from '../assets/images/person-svgrepo-com.svg'
+import listIcon from '../assets/images/list-ul-alt-svgrepo-com.svg'
+import infoIcon from '../assets/images/info-svgrepo-com.svg'
+import userIcon from '../assets/images/user-alt-1-svgrepo-com.svg'
 
 function Header() {
   return (
@@ -9,23 +14,23 @@ function Header() {
 
       <nav>
         <Link to="/">
-          <img src="/src/assets/images/home-svgrepo-com.svg" alt="Ícone Home" />
+          <img src={homeIcon} alt="Ícone Home" />
           Início
         </Link>
         <Link to="/criar-personagem">
-          <img src="/src/assets/images/person-svgrepo-com.svg" alt="Ícone Personagem" />
+          <img src={personIcon} alt="Ícone Personagem" />
           Criar Personagem
         </Link>
         <Link to="/personagens">
-          <img src="/src/assets/images/list-ul-alt-svgrepo-com.svg" alt="Ícone Lista" />
+          <img src={listIcon} alt="Ícone Lista" />
           Meus Personagens
         </Link>
         <Link to="/sobre">
-          <img src="/src/assets/images/info-svgrepo-com.svg" alt="Ícone Informação" />
+          <img src={infoIcon} alt="Ícone Informação" />
           Sobre
         </Link>
         <Link to="/login">
-          <img src="/src/assets/images/user-alt-1-svgrepo-com.svg" alt="Ícone Usuário" />
+          <img src={userIcon} alt="Ícone Usuário" />
           Login
         </Link>
 
