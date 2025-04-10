@@ -55,10 +55,9 @@ function Login(){
     <div>
       <h5> Login </h5>
       <form>
-        <div className="form-group">
-          <label>Usuário:</label>
-          <input type="text"/>
-        </div>
+        <label>Usuário:</label>
+        <input type="text"/>
+        <br/>
         <label>Senha:</label>
         <input type="password"/>
         <button type="submit">Entrar</button>
