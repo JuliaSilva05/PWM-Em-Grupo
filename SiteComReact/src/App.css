@@ -27,25 +27,90 @@ body {
 .content {
   flex: 1;
   padding: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
 }
 
-.home-page-simple {
+/* HomePage Styles */
+.home-page {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: calc(100vh - 100px);
   text-align: center;
 }
 
-.home-page-simple h1 {
+.hero-section {
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 4rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-section h2,
+.hero-section p {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-section h2 {
   font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.info-section {
+  padding: 3rem 1rem;
+  max-width: 800px;
+}
+
+.info-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
   color: var(--accent-color);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.info-section p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+  
+  .hero-section h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
+  }
+  
+  .info-section h3 {
+    font-size: 1.5rem;
+  }
 }
