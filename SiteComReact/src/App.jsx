@@ -14,8 +14,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/criar-personagem" element={<CriarPersonagem />} />
             <Route path="/personagens" element={<PagPersonagens/>} />
-            <Route path="/sobre" element={<div>Página Sobre (em construção)</div>} />
-            <Route path="/login" element={ <Sobre/> } />
+            <Route path="/sobre" element={ <Sobre/> } />
+            <Route path="/login" element={ <div>Página Login (em construção)</div> } />
           </Routes>
         </div>
       </div>
