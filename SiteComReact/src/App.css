@@ -20,8 +20,8 @@
 
 @font-face 
 {
-    font-family: 'Vecna'; 
-    src: url(../src/assets/fonts/Vecna-oppx.ttf); 
+    font-family: 'Draconis'; 
+    src: url(../src/assets/fonts/Draconis-JRw6B.ttf); 
 }
 
 * {
@@ -31,7 +31,7 @@
 }
 
 body {
-  font-family: 'Vecna';
+  font-family: 'Draconis';
   background-color: var(--background-color);
   color: var(--text-color);
 }
