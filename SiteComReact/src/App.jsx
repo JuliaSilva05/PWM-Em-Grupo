@@ -45,7 +45,10 @@ function Sobre(){
   return (
     <div>
       <h4> Sobre </h4>
-      <p> Uma maneira simples de criar fichas para personagens de RPG </p>
+      <p> 
+        Uma maneira simples de criar e visualizar fichas para personagens de RPG!
+        Preencha o formulário com os dados de seu personagem e deixe sua imaginação correr solta! 
+      </p>
     </div>
   )
 }
