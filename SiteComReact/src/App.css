@@ -18,6 +18,12 @@
     src: url(../src/assets/fonts/VecnaBold-4YY4.ttf); 
 }
 
+@font-face 
+{
+    font-family: 'Vecna'; 
+    src: url(../src/assets/fonts/Vecna-oppx.ttf); 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +31,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Vecna';
   background-color: var(--background-color);
   color: var(--text-color);
 }
