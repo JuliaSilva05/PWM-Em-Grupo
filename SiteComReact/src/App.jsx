@@ -15,7 +15,7 @@ function App() {
             <Route path="/criar-personagem" element={<CriarPersonagem />} />
             <Route path="/personagens" element={<PagPersonagens/>} />
             <Route path="/sobre" element={<div>Página Sobre (em construção)</div>} />
-            <Route path="/login" element={<div>Página de Login (em construção)</div>} />
+            <Route path="/login" element={ <Sobre/> } />
           </Routes>
         </div>
       </div>
@@ -37,6 +37,14 @@ function PagPersonagens(){
     <div>
       <h2> Página de Personagens </h2>
       <p> Personagens já criados: </p>
+    </div>
+  )
+}
+
+function Sobre(){
+  return (
+    <div>
+      <h4> Sobre </h4>
     </div>
   )
 }
