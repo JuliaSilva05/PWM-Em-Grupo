@@ -15,7 +15,7 @@ function App() {
             <Route path="/criar-personagem" element={<CriarPersonagem />} />
             <Route path="/personagens" element={<PagPersonagens/>} />
             <Route path="/sobre" element={ <Sobre/> } />
-            <Route path="/login" element={ <div>Página Login (em construção)</div> } />
+            <Route path="/login" element={ <Login/> } />
           </Routes>
         </div>
       </div>
@@ -46,6 +46,17 @@ function Sobre(){
     <div>
       <h4> Sobre </h4>
       <p> Uma maneira simples de criar fichas para personagens de RPG </p>
+    </div>
+  )
+}
+
+function Login(){
+  return (
+    <div>
+      <h5> Login </h5>
+      <form>
+        <input type="text"> </input>
+      </form>
     </div>
   )
 }
