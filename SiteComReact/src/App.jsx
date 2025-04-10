@@ -14,8 +14,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/criar-personagem" element={<CriarPersonagem />} />
             <Route path="/personagens" element={<PagPersonagens/>} />
-            <Route path="/sobre" element={ <Sobre/> } />
-            <Route path="/login" element={ <Login/> } />
+            <Route path="/sobre" element={<Sobre/>} />
+            <Route path="/login" element={<Login/>} />
           </Routes>
         </div>
       </div>
@@ -55,8 +55,12 @@ function Login(){
     <div>
       <h5> Login </h5>
       <form>
-        <input type="text"> </input>
+        <label>Usuário:</label>
+        <input type="text"/>
+        <label>Senha:</label>
+        <input type="password"/>
       </form>
+      
     </div>
   )
 }
