@@ -45,6 +45,7 @@ function Sobre(){
   return (
     <div>
       <h4> Sobre </h4>
+      <p> Uma maneira simples de criar fichas para personagens de RPG </p>
     </div>
   )
 }
