@@ -1,0 +1,11 @@
+.criar-personagem {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.criar-personagem h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+}
