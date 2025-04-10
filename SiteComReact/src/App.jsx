@@ -13,7 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/criar-personagem" element={<CriarPersonagem />} />
-            <Route path="/personagens" element={<div>Página de Personagens (em construção)</div>} />
+            <Route path="/personagens" element={<PagPersonagens/>} />
             <Route path="/sobre" element={<div>Página Sobre (em construção)</div>} />
             <Route path="/login" element={<div>Página de Login (em construção)</div>} />
           </Routes>
@@ -27,7 +27,16 @@ function HomePage() {
   return (
     <div className="home-page-simple">
       <h1>Bem-vindo ao RPG Ficha Fácil</h1>
-        <p> O RPG Ficha Fácil é o melhor site para criar fichas para seus personagens de RPG! </p>
+      <p> O RPG Ficha Fácil é o melhor site para criar fichas para seus personagens de RPG! </p>
+    </div>
+  )
+}
+
+function PagPersonagens(){
+  return (
+    <div>
+      <h2> Página de Personagens </h2>
+      <p> Personagens já criados: </p>
     </div>
   )
 }
