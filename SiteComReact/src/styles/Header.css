@@ -5,7 +5,13 @@
     --border-color: #5d4037; /* Borda marrom */
     --hover-color: #c62828; /* Vermelho para hover */
 }
-  
+
+@font-face 
+{
+    font-family: 'Vecna_Bold'; 
+    src: url(../src/assets/fonts/VecnaBold-4YY4.ttf); 
+}
+
 .header {
     display: flex;
     flex-direction: row;
@@ -18,7 +24,7 @@
 }
   
 .header h1 {
-    font-family: 'Medievalish', 'Cinzel', serif;
+    font-family: 'Vecna_Bold';
     font-size: 2.3rem;
     color: var(--text-color);
     margin: 0;

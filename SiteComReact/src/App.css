@@ -6,6 +6,18 @@
   --hover-color: #c62828;
 }
 
+@font-face 
+{
+    font-family: 'Breathe_Fire_III'; 
+    src: url(../src/assets/fonts/BreatheFireIii-PKLOB.ttf); 
+}
+
+@font-face 
+{
+    font-family: 'Vecna_Bold'; 
+    src: url(../src/assets/fonts/VecnaBold-4YY4.ttf); 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +28,11 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+a
+{
+  font-family: 'Breathe_Fire_III';
 }
 
 .app {
