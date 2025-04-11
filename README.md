@@ -12,6 +12,7 @@ Membros:
       <td align="center"><a href="https://github.com/rafaelsampa"><img src="https://github.com/rafaelsampa.png" width="auto" height="8.25%"/><br>Rafael Sampaio</a></td>
       <td align="center"><a href="https://github.com/Graazi"><img src="https://github.com/Graazi.png" width="auto" height="8.25%"/><br>Graziela Oliveira</a></td>
       <td align="center"><a href="https://github.com/S0f0cl3S"><img src="https://github.com/S0f0cl3S.png" width="auto" height="8.25%"/><br>Gabriel Martins</a></td>
+      <td align="center"><a href="https://github.com/nodemi-alt"><img src="https://github.com/nodemi-alt.png" width="auto" height="8.25%"/><br>Matheus Veríssimo</a></td>
     </tr>
   </tbody>
 </table>

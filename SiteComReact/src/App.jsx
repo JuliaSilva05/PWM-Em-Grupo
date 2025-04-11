@@ -47,12 +47,18 @@ function HomePage() {
 
 function Sobre(){
   return (
-    <div>
-      <h4> Sobre </h4>
+    <div class="flex-home">
+      <h1>Sobre</h1>
       <p> 
-        Uma maneira simples de criar e visualizar fichas para personagens de RPG!
-        Preencha o formulário com os dados de seu personagem e deixe sua imaginação correr solta! 
+        Projeto para a cadeira 'Programação Web E Mobile' 2025.1{"\n"}
+        Professor : Márcio Augusto Silva Bueno{"\n"}{"\n"}
       </p>
+      <h1>Feito por:</h1>
+      <h3>Rafael Sampaio e Silva</h3>
+      <h3>Gabriel Martins de Souza</h3>
+      <h3>Júlia Silva Souto</h3>
+      <h3>Matheus Veríssimo Rodrigues Pinheiro</h3>
+      <h3>Graziela de Oliveira Gonçalves</h3>
     </div>
   )
 }
