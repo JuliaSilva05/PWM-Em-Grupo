@@ -1,84 +1,91 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import axios from "axios";
 
-import Header from './components/Header'
-import CriarPersonagem from './components/CriarPersonagem'
-import './App.css'
+const BASE_URL = "https://www.dnd5eapi.co/api";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <div className="app">
-        <Header />
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/criar-personagem" element={<CriarPersonagem />} />
-            <Route path="/sobre" element={<Sobre/>} />
-            <Route path="/login" element={<Login/>} />
-          </Routes>
-        </div>
-      </div>
-    </BrowserRouter>
-  )
+// Função para buscar todas as raças
+export async function getRacas() {
+  try {
+    const response = await axios.get(`${BASE_URL}/races`);
+    return response.data.results || [];
+  } catch (err) {
+    console.error("Erro ao buscar raças:", err);
+    return [];
+  }
 }
 
-function HomePage() {
-  return (
-    <div className="home-page">
-      <h1 className="center">Bem-vindo ao RPG Ficha Fácil</h1>
-      <p> O RPG Ficha Fácil é o melhor site para criar fichas para seus personagens de RPG! </p>
-
-      <div className="flex-home">
-      <div>
-          <h1>Crie</h1>
-          <p>Use a página de criação integrada com a API D&D 5e para facilmente criar o personagem da sua imaginação.</p>
-        </div>
-        <div>
-          <h1>Organize</h1>
-          <p>Use a página dos seus personagens para agrupar todo mundo que você precisa para sua próxima jornada.</p>
-        </div>
-      </div>
-    </div>
-  )
+// Função para buscar detalhes de uma raça específica
+export async function getRacaDetalhes(index) {
+  try {
+    const response = await axios.get(`${BASE_URL}/races/${index}`);
+    return response.data;
+  } catch (err) {
+    console.error(`Erro ao buscar detalhes da raça ${index}:`, err);
+    return null;
+  }
 }
 
-
-function Sobre(){
-  return (
-    <div className="sobre">
-      <h1>Sobre</h1>
-      <p> 
-        Projeto para a cadeira 'Programação Web E Mobile' 2025.1{"\n"}
-      </p>
-      <p>
-        Professor : Márcio Augusto Silva Bueno{"\n"}{"\n"}
-      </p>
-      <h1>Feito por:</h1>
-      <h3>Rafael Sampaio e Silva</h3>
-      <h3>Gabriel Martins de Souza</h3>
-      <h3>Júlia Silva Souto</h3>
-      <h3>Matheus Veríssimo Rodrigues Pinheiro</h3>
-      <h3>Graziela de Oliveira Gonçalves</h3>
-    </div>
-  )
+// Função para buscar todas as classes
+export async function getClasses() {
+  try {
+    const response = await axios.get(`${BASE_URL}/classes`);
+    return response.data.results || [];
+  } catch (err) {
+    console.error("Erro ao buscar classes:", err);
+    return [];
+  }
 }
 
-function Login(){
-  return (
-    <div>
-      <h5> Login </h5>
-      <form>
-        <label>Usuário:</label>
-        <input type="text"/>
-        <br/>
-        <label>Senha:</label>
-        <input type="password"/>
-        <br/>
-        <button type="submit">Entrar</button>
-      </form>
-      
-    </div>
-  )
+// Função para buscar detalhes de uma classe específica
+export async function getClasseDetalhes(index) {
+  try {
+    const response = await axios.get(`${BASE_URL}/classes/${index}`);
+    return response.data;
+  } catch (err) {
+    console.error(`Erro ao buscar detalhes da classe ${index}:`, err);
+    return null;
+  }
 }
 
-export default App
+// Função para buscar todos os antecedentes
+export async function getAntecedentes() {
+  try {
+    const response = await axios.get(`${BASE_URL}/backgrounds`);
+    return response.data.results || [];
+  } catch (err) {
+    console.error("Erro ao buscar antecedentes:", err);
+    return [];
+  }
+}
+
+// Função para buscar detalhes de um antecedente específico
+export async function getAntecedenteDetalhes(index) {
+  try {
+    const response = await axios.get(`${BASE_URL}/backgrounds/${index}`);
+    return response.data;
+  } catch (err) {
+    console.error(`Erro ao buscar detalhes do antecedente ${index}:`, err);
+    return null;
+  }
+}
+
+// Função para buscar todas as habilidades
+export async function getHabilidades() {
+  try {
+    const response = await axios.get(`${BASE_URL}/ability-scores`);
+    return response.data.results || [];
+  } catch (err) {
+    console.error("Erro ao buscar habilidades:", err);
+    return [];
+  }
+}
+
+// Função para buscar detalhes de uma habilidade específica
+export async function getHabilidadeDetalhes(index) {
+  try {
+    const response = await axios.get(`${BASE_URL}/ability-scores/${index}`);
+    return response.data;
+  } catch (err) {
+    console.error(`Erro ao buscar detalhes da habilidade ${index}:`, err);
+    return null;
+  }
+}
