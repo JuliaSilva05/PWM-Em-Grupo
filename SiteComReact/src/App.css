@@ -60,6 +60,14 @@ a
   text-align: center;
 }
 
+.flex-home
+{
+  margin-top: 52px;
+  display: flex;
+  justify-content: center;  
+  flex-direction: row;
+}
+
 .hero-section {
   background-image: url('');
   background-size: cover;

@@ -26,12 +26,24 @@ function App() {
 
 function HomePage() {
   return (
-    <div className="home-page-simple">
-      <h1>Bem-vindo ao RPG Ficha Fácil</h1>
+    <div class="home-page">
+      <h1 class = "center">Bem-vindo ao RPG Ficha Fácil</h1>
       <p> O RPG Ficha Fácil é o melhor site para criar fichas para seus personagens de RPG! </p>
+
+      <div class="flex-home">
+      <div>
+          <h1>Crie</h1>
+          <p>Use a página de criação integrada com a API D&D 5e para facilmente criar o personagem da sua imaginação.</p>
+        </div>
+        <div>
+          <h1>Organize</h1>
+          <p>Use a página dos seus personagens para agrupar todo mundo que você precisa para sua próxima jornada.</p>
+        </div>
+      </div>
     </div>
   )
 }
+
 
 function Sobre(){
   return (
