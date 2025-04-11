@@ -73,9 +73,11 @@ a
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  align-items: center;
   text-align: center;
   margin-bottom: 2rem;
-  color: var(--accent-color);
+  font-size: 15px;
+
 }
 
 .flex-home
