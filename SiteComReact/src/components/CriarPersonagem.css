@@ -1,11 +1,164 @@
-.criar-personagem {
+.criar-personagem-container {
+  padding: 20px;
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  font-family: 'Draconis', sans-serif;
 }
 
-.criar-personagem h2 {
+.criar-personagem-container h1 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.form-personagem {
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: 'Draconis', sans-serif;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group select {
+  background-color: white;
+  cursor: pointer;
+}
+
+
+.detalhes-info {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 4px;
+}
+
+.detalhes-info h4 {
+  margin-top: 0;
   color: var(--accent-color);
+  font-family: 'Breathe_Fire_III', sans-serif;
+}
+
+.detalhes-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-edit,
+.btn-delete {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Breathe_Fire_III', sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-edit {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-edit:hover,
+.btn-delete:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.personagens-list {
+  list-style: none;
+  padding: 0;
+}
+
+.personagem-item {
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.personagem-item h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+}
+
+.personagem-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .criar-personagem-container {
+    padding: 15px;
+  }
+  
+  .form-buttons,
+  .personagem-actions {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-edit,
+  .btn-delete {
+    width: 100%;
+  }
 }

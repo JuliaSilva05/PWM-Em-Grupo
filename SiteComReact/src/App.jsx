@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
 import CriarPersonagem from './components/CriarPersonagem'
-import MostrarPersonagens from './components/MostrarPersonagens'
 import './App.css'
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/criar-personagem" element={<CriarPersonagem />} />
-            <Route path="/personagens" element={<MostrarPersonagens/>} />
             <Route path="/sobre" element={<Sobre/>} />
             <Route path="/login" element={<Login/>} />
           </Routes>
@@ -26,11 +24,11 @@ function App() {
 
 function HomePage() {
   return (
-    <div class="home-page">
-      <h1 class = "center">Bem-vindo ao RPG Ficha Fácil</h1>
+    <div className="home-page">
+      <h1 className="center">Bem-vindo ao RPG Ficha Fácil</h1>
       <p> O RPG Ficha Fácil é o melhor site para criar fichas para seus personagens de RPG! </p>
 
-      <div class="flex-home">
+      <div className="flex-home">
       <div>
           <h1>Crie</h1>
           <p>Use a página de criação integrada com a API D&D 5e para facilmente criar o personagem da sua imaginação.</p>
@@ -47,7 +45,7 @@ function HomePage() {
 
 function Sobre(){
   return (
-    <div class="sobre">
+    <div className="sobre">
       <h1>Sobre</h1>
       <p> 
         Projeto para a cadeira 'Programação Web E Mobile' 2025.1{"\n"}

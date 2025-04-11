@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import '../styles/Header.css'
 import homeIcon from '../assets/images/home-svgrepo-com.svg'
 import personIcon from '../assets/images/person-svgrepo-com.svg'
-import listIcon from '../assets/images/list-ul-alt-svgrepo-com.svg'
 import infoIcon from '../assets/images/info-svgrepo-com.svg'
 import userIcon from '../assets/images/user-alt-1-svgrepo-com.svg'
 
@@ -21,10 +20,6 @@ function Header() {
           <img src={personIcon} alt="Ícone Personagem" />
           Criar Personagem
         </Link>
-        <Link to="/personagens">
-          <img src={listIcon} alt="Ícone Lista" />
-          Meus Personagens
-        </Link>
         <Link to="/sobre">
           <img src={infoIcon} alt="Ícone Informação" />
           Sobre
@@ -35,9 +30,9 @@ function Header() {
         </Link>
 
       </nav>
-      
+
     </header>
   )
 }
 
-export default Header 
+export default Header
