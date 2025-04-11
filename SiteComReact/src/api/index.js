@@ -29,3 +29,26 @@ export async function addPersonagem(personagem) {
     return null;
   }
 }
+
+
+
+export async function updatePersonagem(personagem) {
+  try {
+    const { objectId, ...dados } = personagem;
+    const response = await axios.put(`${urlPersonagem}/${objectId}`, dados, { headers: headersJson });
+    return response.data;
+  } catch (err) {
+    console.error("Erro ao atualizar personagem:", err);
+    return null;
+  }
+}
+
+export async function deletePersonagem(personagem) {
+  try {
+    const response = await axios.delete(`${urlPersonagem}/${personagem.objectId}`, { headers });
+    return response.data;
+  } catch (err) {
+    console.error("Erro ao deletar personagem:", err);
+    return null;
+  }
+}
