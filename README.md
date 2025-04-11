@@ -4,6 +4,7 @@ Membros:
 <li>Rafael Sampaio e Silva</li>
 <li>Graziela de Oliveira Gonçalves</li>
 <li>Gabriel Martins de Souza</li>
+<li>Matheus Veríssimo Rodrigues Pinheiro</li>
 
 <table>
   <tbody>

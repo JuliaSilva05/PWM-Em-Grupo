@@ -61,6 +61,14 @@ a
   font-size: 25px;
 }
 
+.sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+}
+
 .flex-home
 {
   margin-top: 52px;

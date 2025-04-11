@@ -47,7 +47,7 @@ function HomePage() {
 
 function Sobre(){
   return (
-    <div class="flex-home">
+    <div class="sobre">
       <h1>Sobre</h1>
       <p> 
         Projeto para a cadeira 'Programação Web E Mobile' 2025.1{"\n"}
