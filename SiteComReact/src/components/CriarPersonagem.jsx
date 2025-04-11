@@ -1,118 +1,107 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './CriarPersonagem.css'
+import { addPersonagem } from '../services/personagemService'
 
-function CriarPersonagem() {
- const [raças, setRaças] = useState([])
+const CriarPersonagem = () => {
+  const [nome, setNome] = useState('')
+  const [races, setRaces] = useState([])
+  const [selectedRace, setSelectedRace] = useState('')
   const [classes, setClasses] = useState([])
-  const [antecedentes, setAntecedentes] = useState([])
-  const [personagem, setPersonagem] = useState({
-    nome: '',
-    raça: '',
-    classe: '',
-    antecedente: '',
-    background: '',
-    imagem: null
-  })
+  const [selectedClass, setSelectedClass] = useState('')
+  const [imagem, setImagem] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    // Carregar raças
-    fetch('https://www.dnd5eapi.co/api/races')
-      .then(response => response.json())
-      .then(data => setRaças(data.results))
+    const fetchRacesAndClasses = async () => {
+      try {
+        setLoading(true)
+        const racesResponse = await fetch('https://www.dnd5eapi.co/api/races')
+        const racesData = await racesResponse.json()
+        setRaces(racesData.results)
 
-    // Carregar classes
-    fetch('https://www.dnd5eapi.co/api/classes')
-      .then(response => response.json())
-      .then(data => setClasses(data.results))
+        const classesResponse = await fetch('https://www.dnd5eapi.co/api/classes')
+        const classesData = await classesResponse.json()
+        setClasses(classesData.results)
+      } catch (err) {
+        setError('Erro ao carregar raças e classes')
+      } finally {
+        setLoading(false)
+      }
+    }
 
-    // Carregar antecedentes
-    fetch('https://www.dnd5eapi.co/api/backgrounds')
-      .then(response => response.json())
-      .then(data => setAntecedentes(data.results))
+    fetchRacesAndClasses()
   }, [])
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setPersonagem(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onloadend = () => {
-        setPersonagem(prev => ({
-          ...prev,
-          imagem: reader.result
-        }))
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      setLoading(true)
+      const personagem = {
+        nome,
+        raca: selectedRace,
+        classe: selectedClass,
+        imagem
       }
-      reader.readAsDataURL(file)
+      await addPersonagem(personagem)
+      // Limpar formulário após sucesso
+      setNome('')
+      setSelectedRace('')
+      setSelectedClass('')
+      setImagem(null)
+      alert('Personagem criado com sucesso!')
+    } catch (err) {
+      setError('Erro ao criar personagem')
+    } finally {
+      setLoading(false)
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Aqui você pode salvar o personagem ou fazer o que for necessário
-    console.log('Personagem criado:', personagem)
-  }
+  if (loading) return <div className="criar-personagem-container">Carregando...</div>
+  if (error) return <div className="criar-personagem-container">{error}</div>
 
   return (
-    <div className="criar-personagem">
+    <div className="criar-personagem-container">
       <h2>Criar Novo Personagem</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="personagem-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Nome do Personagem:</label>
+          <label htmlFor="nome">Nome</label>
           <input
             type="text"
-            name="nome"
-            value={personagem.nome}
-            onChange={handleChange}
+            id="nome"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
             required
           />
         </div>
 
         <div className="form-group">
-          <label>Imagem do Personagem:</label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-          />
-          {personagem.imagem && (
-            <img src={personagem.imagem} alt="Preview" className="preview-imagem" />
-          )}
-        </div>
-
-        <div className="form-group">
-          <label>Raça:</label>
+          <label htmlFor="raca">Raça</label>
           <select
-            name="raça"
-            value={personagem.raça}
-            onChange={handleChange}
+            id="raca"
+            value={selectedRace}
+            onChange={(e) => setSelectedRace(e.target.value)}
             required
           >
             <option value="">Selecione uma raça</option>
-            {raças.map(raça => (
-              <option key={raça.index} value={raça.index}>
-                {raça.name}
+            {races.map((race) => (
+              <option key={race.index} value={race.index}>
+                {race.name}
               </option>
             ))}
           </select>
         </div>
 
         <div className="form-group">
-          <label>Classe:</label>
+          <label htmlFor="classe">Classe</label>
           <select
-            name="classe"
-            value={personagem.classe}
-            onChange={handleChange}
+            id="classe"
+            value={selectedClass}
+            onChange={(e) => setSelectedClass(e.target.value)}
             required
           >
             <option value="">Selecione uma classe</option>
-            {classes.map(classe => (
+            {classes.map((classe) => (
               <option key={classe.index} value={classe.index}>
                 {classe.name}
               </option>
@@ -121,37 +110,21 @@ function CriarPersonagem() {
         </div>
 
         <div className="form-group">
-          <label>Antecedente:</label>
-          <select
-            name="antecedente"
-            value={personagem.antecedente}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Selecione um antecedente</option>
-            {antecedentes.map(antecedente => (
-              <option key={antecedente.index} value={antecedente.index}>
-                {antecedente.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="form-group">
-          <label>Background do Personagem:</label>
-          <textarea
-            name="background"
-            value={personagem.background}
-            onChange={handleChange}
-            rows="5"
-            required
+          <label htmlFor="imagem">Imagem</label>
+          <input
+            type="file"
+            id="imagem"
+            accept="image/*"
+            onChange={(e) => setImagem(e.target.files[0])}
           />
         </div>
 
-        <button type="submit">Criar Personagem</button>
+        <button type="submit" className="submit-button">
+          Criar Personagem
+        </button>
       </form>
     </div>
-  ) 
+  )
 }
 
 export default CriarPersonagem 
