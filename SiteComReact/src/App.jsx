@@ -51,6 +51,8 @@ function Sobre(){
       <h1>Sobre</h1>
       <p> 
         Projeto para a cadeira 'Programação Web E Mobile' 2025.1{"\n"}
+      </p>
+      <p>
         Professor : Márcio Augusto Silva Bueno{"\n"}{"\n"}
       </p>
       <h1>Feito por:</h1>

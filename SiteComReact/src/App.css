@@ -165,4 +165,10 @@ a
     font-size: 1.5rem;
   }
 
+  .info-section h5 {
+    font-size: 15rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+  }
+
 }
