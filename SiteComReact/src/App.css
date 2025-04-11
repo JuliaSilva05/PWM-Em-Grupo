@@ -32,6 +32,7 @@
 
 body {
   font-family: 'Draconis';
+  font-size: 25px;
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -65,7 +66,7 @@ a
   margin-top: 52px;
   display: flex;
   justify-content: center;  
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .hero-section {
