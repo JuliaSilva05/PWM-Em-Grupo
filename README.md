@@ -1,4 +1,11 @@
 # PWM-Em-Grupo
+
+Link do site publicado:
+pwm-em-grupo.vercel.app
+
+Vídeo de visão geral:
+https://youtu.be/kWAIULLxVE0
+
 Membros:
 <li>Júlia Silva Souto</li>
 <li>Rafael Sampaio e Silva</li>
